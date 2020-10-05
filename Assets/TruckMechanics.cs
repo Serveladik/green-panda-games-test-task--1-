@@ -10,6 +10,8 @@ public class TruckMechanics : MonoBehaviour
     [SerializeField] int currentLap=1;
     [SerializeField] TopUI moneyManager;
     [SerializeField] AUpgradable upgradeManager;
+    [SerializeField] AUpgradable bulldozerManager;
+    public float loadingTime = 4f;
     private Vector3 tempCord;
     public NavMeshAgent ai;
     //public MeshRenderer truckRock;
@@ -28,7 +30,7 @@ public class TruckMechanics : MonoBehaviour
 
     IEnumerator PathChecker()
     {
-
+        //Wait some time at factory
         if(transform.position.x == factorySpot.transform.position.x)
         {
             bulldozerSpot.SetActive(true);
@@ -38,16 +40,17 @@ public class TruckMechanics : MonoBehaviour
             factorySpot.SetActive(false);
             ai.SetDestination(tempCord);
         }
+        //Wait some time at Bulldozer 
         else if(transform.position.x - bulldozerSpot.transform.position.x >= 0)
         {   
-            
             factorySpot.SetActive(true);
             tempCord = midSpot.transform.position;
-            yield return new WaitForSecondsRealtime(2f);
+            yield return new WaitForSecondsRealtime(loadingTime);
 
             bulldozerSpot.SetActive(false);
             ai.SetDestination(tempCord);
         }
+        //Wait some time in mid
         else if(transform.position.x == midSpot.transform.position.x)
         {
             bulldozerSpot.SetActive(true);
@@ -61,7 +64,6 @@ public class TruckMechanics : MonoBehaviour
         if(currentLap>=5)
         {
             Debug.Log(moneyManager.Coins);
-            //Debug.Log(AUpgradable._level);
             moneyManager.Coins+=upgradeManager.Level;
             currentLap=1;
             return;
@@ -74,8 +76,23 @@ public class TruckMechanics : MonoBehaviour
             currentLap+=1;
         }
     }
+    void CheckForLvlUp()
+    {
+        int temp=2;
+        if(temp<=bulldozerManager.Level)
+        {
+            ++temp;
+            loadingTime-=0.1f;
+            return;
+        }
+        Debug.Log(bulldozerManager.Level);
+        Debug.LogError(temp);
+    }
+   
     void Update()
     {
+        
+        CheckForLvlUp();
         CheckLap();
         StartCoroutine("PathChecker");
     }

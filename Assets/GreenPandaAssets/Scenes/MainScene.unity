@@ -73757,6 +73757,8 @@ MonoBehaviour:
   currentLap: 4
   moneyManager: {fileID: 1538717193}
   upgradeManager: {fileID: 1527658110}
+  bulldozerManager: {fileID: 1860957084}
+  loadingTime: 4
   ai: {fileID: 0}
   bulldozerSpot: {fileID: 1202698473}
   factorySpot: {fileID: 732956174}
