@@ -1,6 +1,6 @@
 namespace GreenPandaAssets.Scripts
 {
-    public class BulldozerUpgradable : AUpgradableBulldozer
+    public class BulldozerUpgradable : AUpgradable
     {
         public BulldozerView BulldozerView;
 

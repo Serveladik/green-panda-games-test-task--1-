@@ -2,7 +2,7 @@ namespace GreenPandaAssets.Scripts
 {
     public class TruckUpgradable : AUpgradable
     {
-        public FactoryView FactoryView;
+        public TruckView TruckView;
 
         private void Update()
         {
@@ -28,7 +28,7 @@ namespace GreenPandaAssets.Scripts
                 skinLevel = 3;
             }
             
-            FactoryView.SetSkinLevel(skinLevel);
+            TruckView.SetSkinLevel(skinLevel);
         }
     }
 }
