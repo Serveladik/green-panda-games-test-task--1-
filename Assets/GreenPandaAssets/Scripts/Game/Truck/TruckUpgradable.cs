@@ -3,6 +3,7 @@ namespace GreenPandaAssets.Scripts
     public class TruckUpgradable : AUpgradable
     {
         public TruckView TruckView;
+        public TruckMechanics truckSpeed;
 
         private void Update()
         {

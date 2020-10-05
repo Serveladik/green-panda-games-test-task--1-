@@ -6,7 +6,7 @@ using GreenPandaAssets.Scripts;
 
 public class TruckMechanics : MonoBehaviour
 {
-    [SerializeField] float truckSpeed;
+    [SerializeField] public float truckSpeed;
     [SerializeField] int currentLap=1;
     [SerializeField] TopUI moneyManager;
     [SerializeField] AUpgradable upgradeManager;
@@ -76,7 +76,6 @@ public class TruckMechanics : MonoBehaviour
     }
     void Update()
     {
-        Debug.Log(transform.position.x - bulldozerSpot.transform.position.x);
         CheckLap();
         StartCoroutine("PathChecker");
     }
