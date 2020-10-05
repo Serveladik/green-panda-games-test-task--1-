@@ -75,7 +75,7 @@ public class UpgradeUI : MonoBehaviour
 
                item.transform.localScale = scale;
                
-               Debug.Log($"Name: {item.name}, currentScale {item.transform.localScale}");
+               //Debug.Log($"Name: {item.name}, currentScale {item.transform.localScale}");
            }
 
            isScaleDownFinished = trees.All(t => t.transform.localScale == new Vector3(.3f, .3f, .3f));
@@ -108,7 +108,7 @@ public class UpgradeUI : MonoBehaviour
 
                 item.transform.localScale = scale;
                 
-                Debug.Log($"Name: {item.name}, currentScale {item.transform.localScale}");
+                //Debug.Log($"Name: {item.name}, currentScale {item.transform.localScale}");
             }
 
             isScaleUpFinished = trees.All(t => t.transform.localScale == Vector3.one);

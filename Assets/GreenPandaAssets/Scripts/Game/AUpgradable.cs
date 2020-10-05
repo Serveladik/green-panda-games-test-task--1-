@@ -4,7 +4,8 @@ namespace GreenPandaAssets.Scripts
 {
     public abstract class AUpgradable : MonoBehaviour
     {
-        protected int _level = 1;
+        public static AUpgradable upgrade;
+        public int _level = 1;
 
         public int Level => _level;
 
