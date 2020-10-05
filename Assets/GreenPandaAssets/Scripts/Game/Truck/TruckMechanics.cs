@@ -11,8 +11,9 @@ public class TruckMechanics : MonoBehaviour
     [SerializeField] TopUI moneyManager;
     [SerializeField] AUpgradable upgradeManager;
     [SerializeField] AUpgradable bulldozerManager;
-    public float loadingTime = 4f;
     private Vector3 tempCord;
+    private int temp=1;
+    public float loadingTime = 4f;
     public NavMeshAgent ai;
     //public MeshRenderer truckRock;
     public GameObject bulldozerSpot;
@@ -78,15 +79,11 @@ public class TruckMechanics : MonoBehaviour
     }
     void CheckForLvlUp()
     {
-        int temp=2;
-        if(temp<=bulldozerManager.Level)
+        if(temp<bulldozerManager.Level)
         {
-            ++temp;
-            loadingTime-=0.1f;
-            return;
+            temp++;
+            loadingTime-=0.15f;
         }
-        Debug.Log(bulldozerManager.Level);
-        Debug.LogError(temp);
     }
    
     void Update()

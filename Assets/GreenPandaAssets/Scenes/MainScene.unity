@@ -43274,7 +43274,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _level: 1
   _maxLevel: 15
-  _startPrice: 100
+  _startPrice: 200
   _priceStepFactor: 2
   FactoryView: {fileID: 1073464817}
 --- !u!1 &1074011537 stripped
