@@ -14290,6 +14290,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ground_02
       objectReference: {fileID: 0}
+    - target: {fileID: 1279437348525479949, guid: e2e682b966e3f644392ffbfab511e0e2,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1279437348525638701, guid: e2e682b966e3f644392ffbfab511e0e2,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -73969,9 +73974,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   truckSpeed: 30
-  currentLap: 4
+  currentLap: 0
   moneyManager: {fileID: 1538717193}
-  upgradeManager: {fileID: 1527658110}
+  upgradeManager: {fileID: 1073464818}
   bulldozerManager: {fileID: 1860957084}
   loadingTime: 4
   ai: {fileID: 0}
@@ -83619,6 +83624,7 @@ GameObject:
   - component: {fileID: 1920418349}
   - component: {fileID: 1920418351}
   - component: {fileID: 1920418350}
+  - component: {fileID: 1920418352}
   m_Layer: 5
   m_Name: MoneyPerMinute Text (TMP) (1)
   m_TagString: Untagged
@@ -83728,7 +83734,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 1
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 0, y: 0, z: 0, w: 19.034912}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -83742,6 +83748,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1920418348}
   m_CullTransparentMesh: 0
+--- !u!114 &1920418352
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1920418348}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31b5473387e9b0442959628ab85faf07, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  money: 0
+  factoryManager: {fileID: 1073464818}
+  moneyPerMinute: {fileID: 1920418350}
 --- !u!1001 &1920538736
 PrefabInstance:
   m_ObjectHideFlags: 0

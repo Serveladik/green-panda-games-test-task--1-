@@ -6,9 +6,9 @@ namespace GreenPandaAssets.Scripts
 {
     public class TopUI : MonoBehaviour
     {
+        private float _coins = 10000;
         public static TopUI Instance;
         
-        private float _coins = 10000;
 
         private void Update()
         {

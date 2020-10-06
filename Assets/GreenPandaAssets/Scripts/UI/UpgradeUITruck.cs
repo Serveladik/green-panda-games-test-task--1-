@@ -23,11 +23,6 @@ public class UpgradeUITruck : MonoBehaviour
         NextLevelText.text = (Upgradable.Level + 1).ToString();
     }
 
-    private void Update()
-    {
-        
-    }
-    
     public void Upgrade()
     {
         var price = Upgradable.GetPrice();

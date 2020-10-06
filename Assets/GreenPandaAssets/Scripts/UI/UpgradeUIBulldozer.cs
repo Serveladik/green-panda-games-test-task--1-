@@ -22,12 +22,6 @@ public class UpgradeUIBulldozer : MonoBehaviour
         CurrentLevelText.text = Upgradable.Level.ToString();
         NextLevelText.text = (Upgradable.Level + 1).ToString();
     }
-
-    private void Update()
-    {
-        
-    }
-    
     public void Upgrade()
     {
         var price = Upgradable.GetPrice();
