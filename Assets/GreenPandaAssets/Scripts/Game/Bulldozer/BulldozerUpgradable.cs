@@ -4,11 +4,7 @@ namespace GreenPandaAssets.Scripts
     {
         public BulldozerView BulldozerView;
 
-        private void Update()
-        {
-        
-        }
-        
+       
         public override void Upgrade()
         {
             base.Upgrade();

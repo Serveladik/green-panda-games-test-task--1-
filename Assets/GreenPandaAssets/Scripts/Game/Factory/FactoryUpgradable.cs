@@ -4,10 +4,6 @@ namespace GreenPandaAssets.Scripts
     {
         public FactoryView FactoryView;
 
-        private void Update()
-        {
-        
-        }
         
         public override void Upgrade()
         {

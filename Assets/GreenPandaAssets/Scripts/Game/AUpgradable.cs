@@ -4,20 +4,14 @@ namespace GreenPandaAssets.Scripts
 {
     public abstract class AUpgradable : MonoBehaviour
     {
+        [SerializeField] protected int _maxLevel = 15;
+        [SerializeField] protected float _startPrice = 100;
+        [SerializeField] protected float _priceStepFactor = 2f;
         public static AUpgradable upgrade;
         public int _level = 1;
 
         public int Level => _level;
 
-        [SerializeField] protected int _maxLevel = 15;
-        [SerializeField] protected float _startPrice = 100;
-        [SerializeField] protected float _priceStepFactor = 2f;
-        
-        private void Update()
-        {
-        
-        }
-        
         public virtual void Upgrade()
         {
             _level++;

@@ -11,6 +11,7 @@ using Random = UnityEngine.Random;
 public class UpgradeUI : MonoBehaviour
 {
     public AUpgradable Upgradable;
+    public Animator noMoneyAnim;
 
     public TextMeshProUGUI PriceText;
     public TextMeshProUGUI CurrentLevelText;
@@ -22,17 +23,16 @@ public class UpgradeUI : MonoBehaviour
         CurrentLevelText.text = Upgradable.Level.ToString();
         NextLevelText.text = (Upgradable.Level + 1).ToString();
     }
-
-    private void Update()
-    {
-        
-    }
     
     public void Upgrade()
     {
         var price = Upgradable.GetPrice();
-        if (price > TopUI.Instance.Coins || Upgradable.IsMax()) return;
-        
+        if (price > TopUI.Instance.Coins || Upgradable.IsMax())
+        {
+            noMoneyAnim.SetBool("NoMoney",true);
+            Debug.Log("NotEnd");
+            return;
+        }
         TopUI.Instance.Coins -= price;
         Upgradable.Upgrade();
         PriceText.text = Upgradable.GetPrice().ToString();
@@ -74,8 +74,6 @@ public class UpgradeUI : MonoBehaviour
                if (scale.z < .3f) scale.z = .3f;
 
                item.transform.localScale = scale;
-               
-               //Debug.Log($"Name: {item.name}, currentScale {item.transform.localScale}");
            }
 
            isScaleDownFinished = trees.All(t => t.transform.localScale == new Vector3(.3f, .3f, .3f));

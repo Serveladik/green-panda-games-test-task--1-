@@ -88,7 +88,6 @@ public class TruckMechanics : MonoBehaviour
    
     void Update()
     {
-        
         CheckForLvlUp();
         CheckLap();
         StartCoroutine("PathChecker");

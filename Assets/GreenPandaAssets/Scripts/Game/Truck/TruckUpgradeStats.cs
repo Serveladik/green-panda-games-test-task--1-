@@ -6,8 +6,8 @@ using GreenPandaAssets.Scripts;
 public class TruckUpgradeStats : MonoBehaviour
 {
    [SerializeField] AUpgradable upgradeManager;
-   private int checkUpgrade=1;
    [SerializeField] TruckMechanics truckSpeed;
+   private int checkUpgrade=1;
     // Update is called once per frame
     void Update()
     {
